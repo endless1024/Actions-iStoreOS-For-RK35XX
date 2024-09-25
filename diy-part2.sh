@@ -116,8 +116,8 @@ sed -i "s/inspur,ihec301|\\\/&\\n	nsy,g68-plus|\\\/g" target/linux/rockchip/rk35
 
 cp -f $GITHUB_WORKSPACE/configfiles/rk3568-ynh518.dts target/linux/rockchip/dts/rk3568/rk3568-ynh518.dts
 
-cp -f $GITHUB_WORKSPACE/configfiles/nsy-g68plus.dts target/linux/rockchip/dts/rk3568/nsy-g68plus.dts
-cp -f $GITHUB_WORKSPACE/configfiles/nsy-g68plus-core.dtsi target/linux/rockchip/dts/rk3568/nsy-g68plus-core.dtsi
+cp -f $GITHUB_WORKSPACE/configfiles/rk3568-nsy-g68plus.dts target/linux/rockchip/dts/rk3568/rk3568-nsy-g68plus.dts
+cp -f $GITHUB_WORKSPACE/configfiles/rk3568-nsy-g68-plus-core.dtsi target/linux/rockchip/dts/rk3568/rk3568-nsy-g68-plus-core.dtsi
 
 
 cp -f $GITHUB_WORKSPACE/configfiles/rk3568-firefly-roc-pc-se-core.dtsi target/linux/rockchip/dts/rk3568/rk3568-firefly-roc-pc-se-core.dtsi
