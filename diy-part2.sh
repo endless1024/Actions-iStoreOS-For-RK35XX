@@ -78,13 +78,46 @@ echo -e "\\ndefine Device/dg_nas
 endef
 TARGET_DEVICES += dg_nas" >> target/linux/rockchip/image/rk35xx.mk
 
+# 增加nsy-g68-plus
+echo -e "\\ndefine Device/nsy-g68-plus
+\$(call Device/rk3568)
+  DEVICE_VENDOR := NSY
+  DEVICE_MODEL := G68PLUS
+  DEVICE_DTS := rk3568-nsy-g68plus
+  SUPPORTED_DEVICES += nsy,g68-plus
+  DEVICE_PACKAGES := kmod-nvme kmod-scsi-core kmod-thermal kmod-switch-rtl8306 kmod-switch-rtl8366-smi kmod-switch-rtl8366rb 
+  kmod-switch-rtl8366s kmod-hwmon-pwmfan kmod-leds-pwm kmod-r8125 kmod-r8168 kmod-switch-rtl8367b swconfig
+endef
+TARGET_DEVICES += nsy-g68plus" >> target/linux/rockchip/image/rk35xx.mk
+
+# 增加ynh-518
+echo -e "\\ndefine Device/rk3568-ynh-518
+\$(call Device/rk3568)
+  DEVICE_VENDOR := Rockchip
+  DEVICE_MODEL := Rockchip RK3568 EVB2 LP4X V10 Board
+  DEVICE_DTS := rk3568-ynh518
+  SUPPORTED_DEVICES += rk3568,ynh-518
+  DEVICE_PACKAGES := kmod-hwmon-pwmfan kmod-thermal
+endef
+TARGET_DEVICES += rk3568-ynh-518" >> target/linux/rockchip/image/rk35xx.mk
 
 
 sed -i "s/panther,x2|\\\/&\\n	dg,nas|\\\/g" target/linux/rockchip/rk35xx/base-files/lib/board/init.sh
 
 sed -i "s/panther,x2|\\\/&\\n	dg,nas|\\\/g" target/linux/rockchip/rk35xx/base-files/etc/board.d/02_network
 
-cp -f $GITHUB_WORKSPACE/configfiles/init.sh target/linux/rockchip/rk35xx/base-files/lib/board/init.sh
+sed -i "s/dg,nas|\\\/&\\n	rk3568,ynh-518|\\\/g" target/linux/rockchip/rk35xx/base-files/lib/board/init.sh
+sed -i "s/dg,nas|\\\/&\\n	rk3568,ynh-518|\\\/g" target/linux/rockchip/rk35xx/base-files/etc/board.d/02_network
+
+
+sed -i "s/inspur,ihec301|\\\/&\\n	nsy,g68-plus|\\\/g" target/linux/rockchip/rk35xx/base-files/lib/board/init.sh
+sed -i "s/inspur,ihec301|\\\/&\\n	nsy,g68-plus|\\\/g" target/linux/rockchip/rk35xx/base-files/etc/board.d/02_network
+
+
+cp -f $GITHUB_WORKSPACE/configfiles/rk3568-ynh518.dts target/linux/rockchip/dts/rk3568/rk3568-ynh518.dts
+
+cp -f $GITHUB_WORKSPACE/configfiles/nsy-g68plus.dts target/linux/rockchip/dts/rk3568/nsy-g68plus.dts
+cp -f $GITHUB_WORKSPACE/configfiles/nsy-g68plus-core.dtsi target/linux/rockchip/dts/rk3568/nsy-g68plus-core.dtsi
 
 
 cp -f $GITHUB_WORKSPACE/configfiles/rk3568-firefly-roc-pc-se-core.dtsi target/linux/rockchip/dts/rk3568/rk3568-firefly-roc-pc-se-core.dtsi
