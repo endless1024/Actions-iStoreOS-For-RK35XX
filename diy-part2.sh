@@ -85,8 +85,7 @@ echo -e "\\ndefine Device/nsy_g68-plus
   DEVICE_MODEL := G68PLUS
   DEVICE_DTS := rk3568-nsy-g68-plus
   SUPPORTED_DEVICES += nsy,g68-plus
-  DEVICE_PACKAGES := kmod-nvme kmod-scsi-core kmod-thermal kmod-switch-rtl8306 kmod-switch-rtl8366-smi kmod-switch-rtl8366rb 
-  kmod-switch-rtl8366s kmod-hwmon-pwmfan kmod-leds-pwm kmod-r8125 kmod-r8168 kmod-switch-rtl8367b swconfig
+  DEVICE_PACKAGES := kmod-nvme kmod-scsi-core kmod-thermal kmod-switch-rtl8306 kmod-switch-rtl8366-smi kmod-switch-rtl8366rb kmod-switch-rtl8366s kmod-hwmon-pwmfan kmod-leds-pwm kmod-r8125 kmod-r8168 kmod-switch-rtl8367b swconfig
 endef
 TARGET_DEVICES += nsy_g68-plus" >> target/linux/rockchip/image/rk35xx.mk
 
