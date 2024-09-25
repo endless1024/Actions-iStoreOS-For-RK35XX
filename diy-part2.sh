@@ -83,7 +83,7 @@ echo -e "\\ndefine Device/nsy-g68-plus
 \$(call Device/rk3568)
   DEVICE_VENDOR := NSY
   DEVICE_MODEL := G68PLUS
-  DEVICE_DTS := rk3568-nsy-g68plus
+  DEVICE_DTS := nsyg68plus
   SUPPORTED_DEVICES += nsy,g68-plus
   DEVICE_PACKAGES := kmod-nvme kmod-scsi-core kmod-thermal kmod-switch-rtl8306 kmod-switch-rtl8366-smi kmod-switch-rtl8366rb 
   kmod-switch-rtl8366s kmod-hwmon-pwmfan kmod-leds-pwm kmod-r8125 kmod-r8168 kmod-switch-rtl8367b swconfig
@@ -116,7 +116,7 @@ sed -i "s/inspur,ihec301|\\\/&\\n	nsy,g68-plus|\\\/g" target/linux/rockchip/rk35
 
 cp -f $GITHUB_WORKSPACE/configfiles/rk3568-ynh518.dts target/linux/rockchip/dts/rk3568/rk3568-ynh518.dts
 
-cp -f $GITHUB_WORKSPACE/configfiles/rk3568-nsy-g68plus.dts target/linux/rockchip/dts/rk3568/rk3568-nsy-g68plus.dts
+cp -f $GITHUB_WORKSPACE/configfiles/nsyg68plus.dts target/linux/rockchip/dts/rk3568/nsyg68plus.dts
 cp -f $GITHUB_WORKSPACE/configfiles/rk3568-nsy-g68-plus-core.dtsi target/linux/rockchip/dts/rk3568/rk3568-nsy-g68-plus-core.dtsi
 
 
