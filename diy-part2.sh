@@ -88,7 +88,7 @@ echo -e "\\ndefine Device/nsy-g68-plus
   DEVICE_PACKAGES := kmod-nvme kmod-scsi-core kmod-thermal kmod-switch-rtl8306 kmod-switch-rtl8366-smi kmod-switch-rtl8366rb 
   kmod-switch-rtl8366s kmod-hwmon-pwmfan kmod-leds-pwm kmod-r8125 kmod-r8168 kmod-switch-rtl8367b swconfig
 endef
-TARGET_DEVICES += nsy-g68-plus" >> target/linux/rockchip/image/rk35xx.mk
+TARGET_DEVICES += nsy-g68-plus2" >> target/linux/rockchip/image/rk35xx.mk
 
 # 增加ynh-518
 echo -e "\\ndefine Device/rk3568-ynh-518
