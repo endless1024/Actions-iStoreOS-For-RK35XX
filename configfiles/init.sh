@@ -179,6 +179,14 @@ board_fixup_iface_name() {
 			rename_iface lan eth1
 		fi
 		;;
+  	nsy,g68-plus)
+		device="$(get_iface_device eth1)"
+		if [[ "$device" = "fe010000.ethernet" ]]; then
+			rename_iface eth0 lan
+			rename_iface eth1 eth0
+			rename_iface lan eth1
+		fi
+		;;
 	esac
 }
 
@@ -337,6 +345,7 @@ board_wait_wifi() {
 	hinlink,opc-h68k|\
 	hinlink,opc-h69k|\
 	jp,tvbox|\
+ 	nsy,g68-plus|\
 	panther,x2|\
 	dg,nas-lite)
 		for seconds in $(seq 0 30); do
