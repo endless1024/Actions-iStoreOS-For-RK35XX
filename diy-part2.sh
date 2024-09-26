@@ -109,8 +109,6 @@ sed -i "s/dg,nas|\\\/&\\n	rk3568,ynh-518|\\\/g" target/linux/rockchip/rk35xx/bas
 sed -i "s/dg,nas|\\\/&\\n	rk3568,ynh-518|\\\/g" target/linux/rockchip/rk35xx/base-files/etc/board.d/02_network
 
 
-sed -i "s/inspur,ihec301|\\\/&\\n	nsy,g68-plus|\\\/g" target/linux/rockchip/rk35xx/base-files/lib/board/init.sh
-sed -i "s/inspur,ihec301|\\\/&\\n	nsy,g68-plus|\\\/g" target/linux/rockchip/rk35xx/base-files/etc/board.d/02_network
 
 
 cp -f $GITHUB_WORKSPACE/configfiles/rk3568-ynh518.dts target/linux/rockchip/dts/rk3568/rk3568-ynh518.dts
