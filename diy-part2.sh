@@ -58,18 +58,7 @@ echo -e "\\ndefine Device/nsy_g68-plus
 endef
 TARGET_DEVICES += nsy_g68-plus" >> target/linux/rockchip/image/rk35xx.mk
 
-# 增加ynh-518
-echo -e "\\ndefine Device/rk3568_ynh-518
-\$(call Device/rk3568)
-  DEVICE_VENDOR := Rockchip
-  DEVICE_MODEL := Rockchip RK3568 EVB2 LP4X V10 Board
-  DEVICE_DTS := rk3568-ynh518
-  SUPPORTED_DEVICES += rk3568,ynh-518
-  DEVICE_PACKAGES := kmod-hwmon-pwmfan kmod-thermal
-endef
-TARGET_DEVICES += rk3568_ynh-518" >> target/linux/rockchip/image/rk35xx.mk
 
-cp -f $GITHUB_WORKSPACE/configfiles/rk3568-ynh518.dts target/linux/rockchip/dts/rk3568/rk3568-ynh518.dts
 
 cp -f $GITHUB_WORKSPACE/configfiles/rk3568-nsy-g68-plus1.dts target/linux/rockchip/dts/rk3568/rk3568-nsy-g68-plus1.dts
 cp -f $GITHUB_WORKSPACE/configfiles/rk3568-nsy-g68-plus1.dtb target/linux/rockchip/dts/rk3568/rk3568-nsy-g68-plus1.dtb
