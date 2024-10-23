@@ -93,3 +93,18 @@ TARGET_DEVICES += nsy_g68-plus" >> target/linux/rockchip/image/rk35xx.mk
 
 
 cp -f $GITHUB_WORKSPACE/configfiles/rk3568-nsy-g68-plus1.dts target/linux/rockchip/dts/rk3568/rk3568-nsy-g68-plus1.dts
+
+# 增加ys-ec588
+echo -e "\\ndefine Device/ys-ec588
+\$(call Device/rk3588)
+  DEVICE_VENDOR := YS
+  DEVICE_MODEL := EC588
+  DEVICE_DTS := ys-ec588
+  SUPPORTED_DEVICES += ys-ec588
+  DEVICE_PACKAGES := kmod-nvme kmod-scsi-core kmod-thermal kmod-hwmon-pwmfan kmod-leds-pwm kmod-r8125 kmod-r8168
+endef
+TARGET_DEVICES += ys-ec588" >> target/linux/rockchip/image/rk35xx.mk
+
+
+
+cp -f $GITHUB_WORKSPACE/configfiles/ys-ec588.dts target/linux/rockchip/dts/rk3568/ys-ec588.dts
