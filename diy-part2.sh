@@ -100,12 +100,12 @@ echo -e "\\ndefine Device/ys-ec588
   DEVICE_VENDOR := YS
   DEVICE_MODEL := EC588
   DEVICE_DTS := ys-ec588
-  SUPPORTED_DEVICES += ys-ec588
+  SUPPORTED_DEVICES += ys,ec588
   DEVICE_PACKAGES := kmod-nvme kmod-scsi-core kmod-thermal kmod-hwmon-pwmfan kmod-leds-pwm kmod-r8125 kmod-r8168
 endef
 TARGET_DEVICES += ys-ec588" >> target/linux/rockchip/image/rk35xx.mk
 
 
 
-cp -f $GITHUB_WORKSPACE/configfiles/ys-ec588.dts target/linux/rockchip/dts/rk3568/ys-ec588.dts
-cp -f $GITHUB_WORKSPACE/configfiles/ys-ec588.dtb target/linux/rockchip/dts/rk3568/ys-ec588.dtb
+cp -f $GITHUB_WORKSPACE/configfiles/ys-ec588.dts target/linux/rockchip/dts/rk3588/ys-ec588.dts
+cp -f $GITHUB_WORKSPACE/configfiles/ys-ec588.dtb target/linux/rockchip/dts/rk3588/ys-ec588.dtb
