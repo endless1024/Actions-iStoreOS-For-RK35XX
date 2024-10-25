@@ -108,4 +108,4 @@ TARGET_DEVICES += ys-ec588" >> target/linux/rockchip/image/rk35xx.mk
 
 
 cp -f $GITHUB_WORKSPACE/configfiles/ys-ec588.dts target/linux/rockchip/dts/rk3588/ys-ec588.dts
-cp -f $GITHUB_WORKSPACE/configfiles/ys-ec588.dtb target/linux/rockchip/dts/rk3588/ys-ec588.dtb
+
