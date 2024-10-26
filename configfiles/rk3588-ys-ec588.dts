@@ -5,7 +5,7 @@
 	interrupt-parent = <0x01>;
 	#address-cells = <0x02>;
 	#size-cells = <0x02>;
-	model = "Rockchip RK3588 EVB7 LP4 V10 Board";
+	model = "Rockchip RK3588 YS EC588";
 
 	mipi_para_choose {
 		compatible = "mipi_para_choose";
