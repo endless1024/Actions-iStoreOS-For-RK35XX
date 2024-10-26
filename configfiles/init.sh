@@ -229,8 +229,7 @@ board_set_iface_smp_affinity() {
 	friendlyelec,nanopi-r5c|\
 	fastrhino,r66s|\
 	hinlink,hnas|\
-	hinlink,opc-h66k|\
-	nsy,g68-plus)
+	hinlink,opc-h66k)
 		if ethtool -i eth0 | grep -Fq 'driver: r8169'; then
 			set_iface_cpumask 4 "eth0"
 			set_iface_cpumask 8 "eth1"
@@ -309,6 +308,7 @@ board_set_iface_smp_affinity() {
 		;;
 	radxa,e20c|\
 	mangopi,m28k|\
+ 	ys,ec588|\
 	hlink,h28k)
 		set_iface_cpumask 5 eth0
 		# eth1 is rtl8111h, driven by r8169 or r8168
@@ -323,6 +323,8 @@ board_set_iface_smp_affinity() {
 	jp,tvbox|\
 	panther,x2|\
 	dg,nas-lite|\
+	nsy,g68-plus|\
+ 	ys,ec588|\
 	hsa,bh2)
 		set_iface_cpumask 2 "eth0"
 		;;
