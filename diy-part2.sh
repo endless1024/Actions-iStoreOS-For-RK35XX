@@ -45,6 +45,7 @@ cp -f $GITHUB_WORKSPACE/configfiles/rk3568-mrkaio-m68s-plus.dts target/linux/roc
 
 
 
+
 # 修改uhttpd配置文件，启用nginx
 # sed -i "/.*uhttpd.*/d" .config
 # sed -i '/.*\/etc\/init.d.*/d' package/network/services/uhttpd/Makefile
@@ -163,11 +164,21 @@ echo -e "\\ndefine Device/bdy_g18-pro
 endef
 TARGET_DEVICES += bdy_g18-pro" >> target/linux/rockchip/image/rk35xx.mk
 
-
+# 增加alark35-3500
+echo -e "\\ndefine Device/alark35-3500
+\$(call Device/rk3568)
+  DEVICE_VENDOR := alark35
+  DEVICE_MODEL := 3500
+  DEVICE_DTS := rk3568-alark35-3500
+  SUPPORTED_DEVICES += alark35,3500
+  DEVICE_PACKAGES := kmod-nvme kmod-scsi-core kmod-thermal kmod-hwmon-pwmfan kmod-leds-pwm kmod-r8125 kmod-r8168 swconfig kmod-swconfig
+endef
+TARGET_DEVICES += alark35_3500" >> target/linux/rockchip/image/rk35xx.mk
 
 cp -f $GITHUB_WORKSPACE/configfiles/rk3568-nsy-g68-plus.dts target/linux/rockchip/dts/rk3568/rk3568-nsy-g68-plus.dts
 cp -f $GITHUB_WORKSPACE/configfiles/rk3568-nsy-g16-plus.dts target/linux/rockchip/dts/rk3568/rk3568-nsy-g16-plus.dts
 cp -f $GITHUB_WORKSPACE/configfiles/rk3568-bdy-g18-pro.dts target/linux/rockchip/dts/rk3568/rk3568-bdy-g18-pro.dts
+cp -f $GITHUB_WORKSPACE/configfiles/rk3568-alark35-3500.dts target/linux/rockchip/dts/rk3568/rk3568-alark35-3500.dts
 
 
 # 定时限速插件
